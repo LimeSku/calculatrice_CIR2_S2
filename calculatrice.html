@@ -73,25 +73,30 @@
 								<td>
 								<input value="0" onclick="addNumber(this.form,'0')" type="button" class="mainbutton" />
 								</td>
-								
                                 <td>
+                                <input value="." onclick="addNumber(this.form,'.')" type="button" class="mainbutton" />
                                 </td>
-                                <td></td>
+                                
                                 <td>
-                                <input value="/" onclick="addNumber(this.form,'/')" type="button" class="operator" />
+                                    <input value="C" onclick="clearDigits(this.form)" type="button" class="mainbutton" />
+                                </td>
+                                <td>
+                                    <input value="/" onclick="addNumber(this.form,'/')" type="button" class="operator" />
                                 </td>
 								
 							</tr>
 							<tr>
-								<td colspan="2">
-								<input value="=" onclick='calc(this.form)' type="button" class="operator" />
-								</td>
                                 <td>
-                                    <input value="." onclick="addNumber(this.form,'.')" type="button" class="mainbutton" />
-                                    </td>
-                                <td>
-                                <input value="C" onclick="clearDigits(this.form)" type="button" class="mainbutton" />
+                                    <input value="&#40;" onclick="addNumber(this.form,'&#40')" type="button" class="operator" />
                                 </td>
+                                <td>
+                                    <input value="&#41;" onclick="addNumber(this.form,'&#41')" type="button" class="operator" />
+                                </td>
+								<td colspan="2">
+								    <input value="=" onclick='calc(this.form)' type="button" class="operator" />
+								</td>
+                                
+                                
                                 
                                     
 							</tr>
