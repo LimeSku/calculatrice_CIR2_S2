@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+
+}
+html {
+    font-family:  "lato" , sans-serif;
+}
+
+body {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: linear-gradient(#e66465, #9198e5);
+}
+.title {
+    /* text-align: center; */
+    margin: 0 auto;
+    width: max-content;
+    padding-bottom: 5%;
+    
+
+}
+
+.container {
+    padding-top: 20vh;
+    width: 25%;
+    height: 100%;
+    /* margin: 0 auto 0 auto; */
+}
+.calculatrice {
+    
+    background-color: #222222;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+}
+.ecran {
+    width: 100%;
+    height: 6vh;
+
+    background-color: rgb(198, 237, 255);
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.mainbutton ,.operator{
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+
+
+
+input[type=button] {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f7f7f7;
+    font-size: 18px;
+    box-shadow: 0 3px #a8a8a8;
+}
+
+input[value="C"]{
+    background-color: #ff9900;
+    font-weight: bold;
+    color: white;
+}
+
+input[value="="]{
+    background-color: #36e700;
+    font-weight: bold;
+    color: white;
+}

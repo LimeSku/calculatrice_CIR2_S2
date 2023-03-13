@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<title>Calculatrice</title>
+		<meta name="description" content="Calculatrice en JavaScript" />
+	</head>
+
+	<body>
+			
+			<br>
+			<script src="calculatrice.js"></script>
+			<noscript>Sans javascript la page ne fonctionne pas !</noscript>
+            <div class="container">
+                <h1 class="title">Calculatrice : étape 1</h1>
+                <form class="calculatrice">
+					
+					<table>
+						<tbody>
+							<tr>
+								<td colspan="4">
+								<input name="digits" size="20" type="text" readonly placeholder="Entrez un calcul..." class="ecran"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<input value="7" onclick="addNumber(this.form,'7')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="8" onclick="addNumber(this.form,'8')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="9" onclick="addNumber(this.form,'9')" type="button" class="mainbutton" />
+								</td>
+								<td>
+                                <input value="+" onclick="addNumber(this.form,'+')" type="button" class="operator"/>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<input value="4" onclick="addNumber(this.form,'4')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="5" onclick="addNumber(this.form,'5')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="6" onclick="addNumber(this.form,'6')" type="button" class="mainbutton" />
+								</td>
+								<td>
+                                <input value="-" onclick="addNumber(this.form,'-')" type="button" class="operator" />
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<input value="1" onclick="addNumber(this.form,'1')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="2" onclick="addNumber(this.form,'2')" type="button" class="mainbutton" />
+								</td>
+								<td>
+								<input value="3" onclick="addNumber(this.form,'3')" type="button" class="mainbutton" />
+								</td>
+								<td>
+                                <input value="*" onclick="addNumber(this.form,'*')" type="button" class="operator" />
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+								<input value="0" onclick="addNumber(this.form,'0')" type="button" class="mainbutton" />
+								</td>
+								
+                                <td>
+                                </td>
+                                <td></td>
+                                <td>
+                                <input value="/" onclick="addNumber(this.form,'/')" type="button" class="operator" />
+                                </td>
+								
+							</tr>
+							<tr>
+								<td colspan="2">
+								<input value="=" onclick='calc(this.form)' type="button" class="operator" />
+								</td>
+                                <td>
+                                    <input value="." onclick="addNumber(this.form,'.')" type="button" class="mainbutton" />
+                                    </td>
+                                <td>
+                                <input value="C" onclick="clearDigits(this.form)" type="button" class="mainbutton" />
+                                </td>
+                                
+                                    
+							</tr>
+						</tbody>
+					</table>
+					<br>
+			</form>
+            </div>
+
+	</body>
+</html>
