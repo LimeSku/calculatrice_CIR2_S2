@@ -1,13 +1,33 @@
 
 
-function addNumber(object, val){
-    object.digits.value += val;
-}
+class BaseCalculator{
+    constructor(digitsName){
+        this.obj = digitsName;
+        this.sequence = [""];
+    }
 
-function calc(object){
-    object.digits.value=eval(object.digits.value);
-}
+    addNumber(val){
+        document.getElementsByName(this.obj)[0].value += val;
+        this.sequence.push(document.getElementsByName(this.obj)[0].value);
+        console.log(this.sequence)
 
-function clearDigits(object){
-    object.digits.value = " ";
+    }
+
+    calc(){
+        let currentCalc = document.getElementsByName(this.obj)[0].value;
+        document.getElementsByName(this.obj)[0].value = eval(currentCalc);
+        this.sequence.push(document.getElementsByName(this.obj)[0].value);
+    }
+
+    clearDigits(){
+        document.getElementsByName(this.obj)[0].value = "";
+        this.sequence.push(document.getElementsByName(this.obj)[0].value);
+    }
+
+    back(){
+        if(this.sequence.length >= 1){
+            this.sequence.pop();
+            document.getElementsByName(this.obj)[0].value = this.sequence.slice(-1);
+        }
+    }
 }

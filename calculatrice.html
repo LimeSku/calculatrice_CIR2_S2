@@ -12,6 +12,10 @@
 			
 			<br>
 			<script src="calculatrice.js"></script>
+			<script>
+				let c = new BaseCalculator("digits");
+			</script>
+			
 			<noscript>Sans javascript la page ne fonctionne pas !</noscript>
             <div class="container">
                 <h1 class="title">Calculatrice : étape 1</h1>
@@ -26,74 +30,77 @@
 							</tr>
 							<tr>
 								<td>
-								<input value="7" onclick="addNumber(this.form,'7')" type="button" class="mainbutton" />
+								<input value="7" onclick="c.addNumber('7')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="8" onclick="addNumber(this.form,'8')" type="button" class="mainbutton" />
+								<input value="8" onclick="c.addNumber('8')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="9" onclick="addNumber(this.form,'9')" type="button" class="mainbutton" />
+								<input value="9" onclick="c.addNumber('9')" type="button" class="mainbutton" />
 								</td>
 								<td>
-                                <input value="+" onclick="addNumber(this.form,'+')" type="button" class="operator"/>
+                                <input value="+" onclick="c.addNumber('+')" type="button" class="operator"/>
 
 								</td>
 							</tr>
 							<tr>
 								<td>
-								<input value="4" onclick="addNumber(this.form,'4')" type="button" class="mainbutton" />
+								<input value="4" onclick="c.addNumber('4')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="5" onclick="addNumber(this.form,'5')" type="button" class="mainbutton" />
+								<input value="5" onclick="c.addNumber('5')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="6" onclick="addNumber(this.form,'6')" type="button" class="mainbutton" />
+								<input value="6" onclick="c.addNumber('6')" type="button" class="mainbutton" />
 								</td>
 								<td>
-                                <input value="-" onclick="addNumber(this.form,'-')" type="button" class="operator" />
+                                <input value="-" onclick="c.addNumber('-')" type="button" class="operator" />
 
 								</td>
 							</tr>
 							<tr>
 								<td>
-								<input value="1" onclick="addNumber(this.form,'1')" type="button" class="mainbutton" />
+								<input value="1" onclick="c.addNumber('1')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="2" onclick="addNumber(this.form,'2')" type="button" class="mainbutton" />
+								<input value="2" onclick="c.addNumber('2')" type="button" class="mainbutton" />
 								</td>
 								<td>
-								<input value="3" onclick="addNumber(this.form,'3')" type="button" class="mainbutton" />
+								<input value="3" onclick="c.addNumber('3')" type="button" class="mainbutton" />
 								</td>
 								<td>
-                                <input value="*" onclick="addNumber(this.form,'*')" type="button" class="operator" />
+                                <input value="*" onclick="c.addNumber('*')" type="button" class="operator" />
 
 								</td>
 							</tr>
 							<tr>
 								<td>
-								<input value="0" onclick="addNumber(this.form,'0')" type="button" class="mainbutton" />
+								<input value="0" onclick="c.addNumber('0')" type="button" class="mainbutton" />
 								</td>
                                 <td>
-                                <input value="." onclick="addNumber(this.form,'.')" type="button" class="mainbutton" />
+                                <input value="." onclick="c.addNumber('.')" type="button" class="mainbutton" />
                                 </td>
                                 
                                 <td>
-                                    <input value="C" onclick="clearDigits(this.form)" type="button" class="mainbutton" />
+                                    <input value="C" onclick="c.clearDigits()" type="button" class="mainbutton" />
                                 </td>
                                 <td>
-                                    <input value="/" onclick="addNumber(this.form,'/')" type="button" class="operator" />
+                                    <input value="/" onclick="c.addNumber('/')" type="button" class="operator" />
                                 </td>
 								
 							</tr>
 							<tr>
                                 <td>
-                                    <input value="&#40;" onclick="addNumber(this.form,'&#40')" type="button" class="operator" />
+                                    <input value="&#40;" onclick="c.addNumber('&#40')" type="button" class="operator" />
                                 </td>
                                 <td>
-                                    <input value="&#41;" onclick="addNumber(this.form,'&#41')" type="button" class="operator" />
+                                    <input value="&#41;" onclick="c.addNumber('&#41')" type="button" class="operator" />
                                 </td>
-								<td colspan="2">
-								    <input value="=" onclick='calc(this.form)' type="button" class="operator" />
+								<td colspan="1">
+								    <input value="=" onclick='c.calc()' type="button" class="operator" />
+								</td>
+								<td colspan="1">
+								    <input value="del" onclick='c.back()' type="button" class="operator" />
 								</td>
                                 
                                 
@@ -105,6 +112,6 @@
 					<br>
 			</form>
             </div>
-
+			
 	</body>
 </html>
