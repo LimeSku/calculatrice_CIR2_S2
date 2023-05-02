@@ -45,7 +45,7 @@ class BaseCalculator{
                 created_at:new Date().toISOString().slice(0, 19).replace('T', ' ')
             };
 
-            this.request(ftime,'http://localhost:3000/success');
+            this.request(dataraw,'http://localhost:3000/success');
 
         } catch (e) {
             if (e instanceof SyntaxError) {
