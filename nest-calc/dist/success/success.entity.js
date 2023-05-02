@@ -22,7 +22,7 @@ __decorate([
     __metadata("design:type", Number)
 ], success.prototype, "timeTakenMs", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    (0, typeorm_1.Column)({ type: 'date' }),
     __metadata("design:type", Date)
 ], success.prototype, "created_at", void 0);
 success = __decorate([

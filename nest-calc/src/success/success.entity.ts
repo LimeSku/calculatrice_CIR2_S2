@@ -8,6 +8,6 @@ export class success extends BaseEntity {
   @Column()
   timeTakenMs: number;
 
-  @CreateDateColumn()
+  @Column({type:'date'})
   created_at: Date;
 }

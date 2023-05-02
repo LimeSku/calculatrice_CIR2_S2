@@ -4,13 +4,16 @@ class BaseCalculator{
     constructor(digitsName){
         this.obj = digitsName;
         this.sequence = [""];
+        this.timeTaken = Date.now();
     }
 
 
     request(time){
         let url = 'http://localhost:3000/success'
+        
         let dataraw = {
-            timeTakenMs:time
+            timeTakenMs:time,
+            created_at:new Date().toISOString().slice(0, 19).replace('T', ' ')
         };
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", url, true);
@@ -28,18 +31,15 @@ class BaseCalculator{
     addNumber(val){
         document.getElementsByName(this.obj)[0].value += val;
         this.sequence.push(document.getElementsByName(this.obj)[0].value);
-        console.log(this.sequence)
-
     }
 
     calc(){
-        const d = new Date();
-        let t1 = d.getTime();
         let currentCalc = document.getElementsByName(this.obj)[0].value;
         document.getElementsByName(this.obj)[0].value = eval(currentCalc);
         this.sequence.push(document.getElementsByName(this.obj)[0].value);
-        const d2 = new Date();
-        let ftime = d2.getTime()-t1;
+        let ftime = Date.now()-this.timeTaken;
+        this.timeTaken = Date.now();
+        console.log(ftime);
         this.request(ftime);
     }
 

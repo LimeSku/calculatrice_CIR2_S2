@@ -15,6 +15,7 @@ let ErrorsService = class ErrorsService {
         err.id = id;
         err.timeTakenMs = timeTakenMs;
         err.created_at = created_at;
+        await err.save();
         return err;
     }
 };
