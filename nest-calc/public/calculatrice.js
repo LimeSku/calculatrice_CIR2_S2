@@ -10,9 +10,7 @@ class BaseCalculator{
 
 
     request(dataraw,url){
-        // let url = 'http://localhost:3000/success'
-        
-        
+            
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", url, true);
         xhttp.setRequestHeader("Content-type", "application/json");
