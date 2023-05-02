@@ -3,5 +3,5 @@ import { errors } from './errors.entity';
 export declare class ErrorsController {
     private errorsService;
     constructor(errorsService: ErrorsService);
-    createError(id: number, timeTakenMs: number, created_at: Date): Promise<errors>;
+    createError(id: number, created_at: Date): Promise<errors>;
 }

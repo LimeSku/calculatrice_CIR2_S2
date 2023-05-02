@@ -5,9 +5,6 @@ export class errors extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  timeTakenMs: number;
-
   @CreateDateColumn()
   created_at: Date;
 }

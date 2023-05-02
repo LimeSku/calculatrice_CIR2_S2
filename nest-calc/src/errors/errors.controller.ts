@@ -9,9 +9,8 @@ export class ErrorsController {
     @Post()
     createError(
      @Body('id') id: number,  
-     @Body('timeTakenMs') timeTakenMs: number,
      @Body('created_at') created_at: Date,
      ): Promise<errors> {
-     return this.errorsService.createError(id, timeTakenMs, created_at);
+     return this.errorsService.createError(id, created_at);
      }
 }

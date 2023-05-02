@@ -10,10 +10,9 @@ exports.ErrorsService = void 0;
 const common_1 = require("@nestjs/common");
 const errors_entity_1 = require("./errors.entity");
 let ErrorsService = class ErrorsService {
-    async createError(id, timeTakenMs, created_at) {
+    async createError(id, created_at) {
         const err = new errors_entity_1.errors();
         err.id = id;
-        err.timeTakenMs = timeTakenMs;
         err.created_at = created_at;
         await err.save();
         return err;

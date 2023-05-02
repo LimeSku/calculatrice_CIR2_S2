@@ -8,13 +8,11 @@ class BaseCalculator{
     }
 
 
-    request(time){
-        let url = 'http://localhost:3000/success'
+
+    request(dataraw,url){
+        // let url = 'http://localhost:3000/success'
         
-        let dataraw = {
-            timeTakenMs:time,
-            created_at:new Date().toISOString().slice(0, 19).replace('T', ' ')
-        };
+        
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", url, true);
         xhttp.setRequestHeader("Content-type", "application/json");
@@ -28,6 +26,7 @@ class BaseCalculator{
             };
     }
 
+
     addNumber(val){
         document.getElementsByName(this.obj)[0].value += val;
         this.sequence.push(document.getElementsByName(this.obj)[0].value);
@@ -35,12 +34,34 @@ class BaseCalculator{
 
     calc(){
         let currentCalc = document.getElementsByName(this.obj)[0].value;
-        document.getElementsByName(this.obj)[0].value = eval(currentCalc);
-        this.sequence.push(document.getElementsByName(this.obj)[0].value);
-        let ftime = Date.now()-this.timeTaken;
-        this.timeTaken = Date.now();
-        console.log(ftime);
-        this.request(ftime);
+
+        try {
+            // eval(code); 
+            document.getElementsByName(this.obj)[0].value = eval(currentCalc);
+            this.sequence.push(document.getElementsByName(this.obj)[0].value);
+            let ftime = Date.now()-this.timeTaken;
+            this.timeTaken = Date.now();
+            console.log(ftime);
+            let dataraw = {
+                timeTakenMs:ftime,
+                created_at:new Date().toISOString().slice(0, 19).replace('T', ' ')
+            };
+
+            this.request(ftime,'http://localhost:3000/success');
+
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                alert(e.message);
+
+                let dataraw = {
+                    created_at:new Date().toISOString().slice(0, 19).replace('T', ' ')
+                };
+                this.request(dataraw,'http://localhost:3000/errors');
+
+            }
+        }
+        
+        
     }
 
     clearDigits(){

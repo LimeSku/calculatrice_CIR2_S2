@@ -19,17 +19,16 @@ let ErrorsController = class ErrorsController {
     constructor(errorsService) {
         this.errorsService = errorsService;
     }
-    createError(id, timeTakenMs, created_at) {
-        return this.errorsService.createError(id, timeTakenMs, created_at);
+    createError(id, created_at) {
+        return this.errorsService.createError(id, created_at);
     }
 };
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)('id')),
-    __param(1, (0, common_1.Body)('timeTakenMs')),
-    __param(2, (0, common_1.Body)('created_at')),
+    __param(1, (0, common_1.Body)('created_at')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Number, Date]),
+    __metadata("design:paramtypes", [Number, Date]),
     __metadata("design:returntype", Promise)
 ], ErrorsController.prototype, "createError", null);
 ErrorsController = __decorate([
